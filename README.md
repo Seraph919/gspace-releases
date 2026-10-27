@@ -12,12 +12,13 @@ If your local storage is `/goinfre/$USER`, run:
 ```sh
 export GOINFRE="/goinfre/$USER"
 export npm_config_cache="$GOINFRE/.gspace/runtime/npm-cache"
-npx --yes --package https://github.com/Seraph919/gspace-releases/releases/download/v0.1.1/gspace-0.1.1.tgz gspace
+npx gspace
 ```
 
 Use your actual writable goinfre path if different. Append `status --json`,
-`analyze`, or `doctor` to run a command instead of the interface. Plain
-`npx gspace` is not yet published to npm; use the full command above.
+`analyze`, or `doctor` to run a command instead of the interface. The
+[public npm launcher](https://www.npmjs.com/package/gspace) needs no npm account
+to install or run.
 
 First launch downloads a 10.8 MiB runtime, verifies its checksums and unpacks it
 inside goinfre. Later launches reuse it. Updates are checked once per day;
