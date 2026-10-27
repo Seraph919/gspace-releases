@@ -12,7 +12,7 @@ If your local storage is `/goinfre/$USER`, run:
 ```sh
 export GOINFRE="/goinfre/$USER"
 export npm_config_cache="$GOINFRE/.gspace/runtime/npm-cache"
-npx --yes --package https://github.com/Seraph919/gspace-releases/releases/download/v0.1.0/gspace-0.1.0.tgz gspace
+npx --yes --package https://github.com/Seraph919/gspace-releases/releases/download/v0.1.1/gspace-0.1.1.tgz gspace
 ```
 
 Use your actual writable goinfre path if different. Append `status --json`,
