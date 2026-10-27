@@ -4,7 +4,7 @@ Gspace helps 1337/42 students move selected caches and reproducible developer da
 from roaming HOME to local goinfre. This repository contains prebuilt downloads.
 The source repository is private.
 
-Requires Linux x86_64 with glibc 2.35+ (Ubuntu 22.04 or newer) and Node 20+.
+Requires Linux x86_64 with glibc 2.35+ (Ubuntu 22.04 or newer) and Node 12.22.9+.
 Python and Textual are bundled. No pip, compiler, sudo or Docker is needed.
 
 If your local storage is `/goinfre/$USER`, run:
