@@ -30,13 +30,19 @@ and `q` to quit. Existing storage tools remain available in the sidebar.
 
 Official downloads include Zen and qBittorrent AppImages, VS Code, Firefox,
 Postman, Discord's official portable installer, and Chromium's development
-snapshot. Downloads use HTTPS, pinned SHA-256 checks, parallel ranges and resume.
+snapshot. Downloads use HTTPS, pinned SHA-256 checks, parallel ranges, reused
+connections and resume. Progress shows the source host and both MB/s and Mbps.
 App binaries and new app profiles stay in goinfre. Existing profiles are untouched.
 Export important portable-profile data before switching workstations. Removing an
 app keeps its profile. Desktop libraries and browser sandbox support still depend
 on the workstation; Gspace does not disable browser sandboxes.
 
-The first launch downloads approximately 17.6 MiB for Gspace itself. Later
+Installed apps appear in GNOME Applications with official icons. Runtime 0.2.1
+repairs entries for existing installs when you open Gspace, without downloading
+the apps again. Run `gspace --update` to apply it; the existing 0.2.0 launcher
+works with this update, with no npm login or reinstall.
+
+The first launch downloads approximately 17.7 MiB for Gspace itself. Later
 launches reuse the verified runtime. Downloads use
 [free static Cloudflare Pages](https://gspace-downloads.pages.dev/), with GitHub
 Releases as a fallback. CDN routing is automatic; a specific city or download
