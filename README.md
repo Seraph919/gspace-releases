@@ -37,10 +37,16 @@ Export important portable-profile data before switching workstations. Removing a
 app keeps its profile. Desktop libraries and browser sandbox support still depend
 on the workstation; Gspace does not disable browser sandboxes.
 
-Installed apps appear in GNOME Applications with official icons. Runtime 0.2.1
+Installed apps appear in GNOME Applications with official icons. The current runtime
 repairs entries for existing installs when you open Gspace, without downloading
 the apps again. Run `gspace --update` to apply it; the existing 0.2.0 launcher
 works with this update, with no npm login or reinstall.
+
+**Stay Awake** is available in the sidebar in runtime 0.2.2. Choose **Turn on**
+to keep the screen awake: X11 moves the pointer one pixel and back every
+15 seconds; GNOME Wayland uses an idle inhibitor. It continues after Gspace
+closes. Select **Turn off** or log out to end it. It starts off in new desktop
+sessions and needs no sudo or xdotool.
 
 The first launch downloads approximately 17.7 MiB for Gspace itself. Later
 launches reuse the verified runtime. Downloads use
