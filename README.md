@@ -1,36 +1,36 @@
 # Gspace downloads
 
-Gspace helps 1337/42 students move selected caches and reproducible developer data
-from roaming HOME to local goinfre. This repository contains prebuilt downloads.
-The source repository is private.
+Gspace helps 1337/42 students keep a small HOME usable and download portable apps
+into local goinfre. This repository contains prebuilt downloads; source stays private.
 
-Requires Linux x86_64 with glibc 2.35+ (Ubuntu 22.04 or newer) and Node 12.22.9+.
+Requires Linux x86_64, glibc 2.35+ (Ubuntu 22.04 or newer), and Node 12.22.9+.
 Python and Textual are bundled. No pip, compiler, sudo or Docker is needed.
 
-If your local storage is `/goinfre/$USER`, run:
+Use your actual writable goinfre path:
 
 ```sh
 export GOINFRE="/goinfre/$USER"
 export npm_config_cache="$GOINFRE/.gspace/runtime/npm-cache"
-npx gspace
+npx --yes gspace --update
 ```
 
-Use your actual writable goinfre path if different. Append `status --json`,
-`analyze`, or `doctor` to run a command instead of the interface. The
-[public npm launcher](https://www.npmjs.com/package/gspace) needs no npm account
-to install or run.
+The Linutil-inspired interface has a sidebar, search, app categories and storage
+meters. Use `/` to search, Space to select apps, `d` to download, Enter to open,
+and `q` to quit. Existing storage tools remain available in the sidebar.
 
-First launch downloads a 10.8 MiB runtime, verifies its checksums and unpacks it
-inside goinfre. Later launches reuse it. Updates are checked once per day;
-`--update` forces a check. If an update fails, the existing verified runtime is
-used. Actual first-download time depends on the workstation's connection.
+Official downloads include Zen and qBittorrent AppImages, VS Code, Firefox,
+Postman, Discord's official portable installer, and Chromium's development
+snapshot. Downloads use HTTPS, pinned SHA-256 checks, parallel ranges and resume.
+App binaries and new app profiles stay in goinfre. Existing profiles are untouched.
+Export important portable-profile data before switching workstations. Removing an
+app keeps its profile. Desktop libraries and browser sandbox support still depend
+on the workstation; Gspace does not disable browser sandboxes.
 
-Use arrows and Enter to navigate, Space to select items, Escape to go back, and
-`q` to quit. Close affected applications before moving or cleaning their data.
-The interface asks for confirmation before mutations. Local goinfre is not a
-backup: when switching workstations, cached/reproducible data may need rebuilding
-or reinstalling.
+The first launch downloads approximately 17.6 MiB for Gspace itself. Later
+launches reuse the verified runtime. Downloads use
+[free static Cloudflare Pages](https://gspace-downloads.pages.dev/), with GitHub
+Releases as a fallback. CDN routing is automatic; a specific city or download
+speed is not guaranteed. Third-party apps download from their publishers.
 
-Builds run locally and downloads use GitHub Releases. This setup does not use
-Cloudflare R2, paid CI or a cloud server. Included third-party license notices are
-inside the runtime archive's `licenses/` directory.
+Builds run locally. This setup uses no R2, Pages Functions, paid CI or rented
+server. Included third-party notices are in the runtime's `licenses/` directory.
