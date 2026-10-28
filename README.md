@@ -6,13 +6,23 @@ into local goinfre. This repository contains prebuilt downloads; source stays pr
 Requires Linux x86_64, glibc 2.35+ (Ubuntu 22.04 or newer), and Node 12.22.9+.
 Python and Textual are bundled. No pip, compiler, sudo or Docker is needed.
 
-Use your actual writable goinfre path:
+For a school account with a roaming HOME, install the small launcher **once**:
 
 ```sh
-export GOINFRE="/goinfre/$USER"
-export npm_config_cache="$GOINFRE/.gspace/runtime/npm-cache"
-npx --yes gspace --update
+curl -fsSL https://gspace-downloads.pages.dev/install.sh | sh
+export PATH="$HOME/.local/bin:$PATH"
+gspace
 ```
+
+After that, just run `gspace` on any school PC. Setup adds about 35 KB to your
+roaming HOME and configures Bash/Zsh; it uses Node directly, so a broken npm
+cache cannot block startup. Curl is needed for the one-time setup. The launcher
+finds `$GOINFRE`, `/goinfre/$USER`, or `~/goinfre` automatically on each PC.
+Use `gspace --update` to check for runtime updates immediately. Your HOME must
+be shared between PCs for this setup to follow you.
+
+The npm entry point remains available with `npx gspace` when npm has a working
+cache. Keep that cache in local storage rather than your small roaming HOME.
 
 The Linutil-inspired interface has a sidebar, search, app categories and storage
 meters. Use `/` to search, Space to select apps, `d` to download, Enter to open,
